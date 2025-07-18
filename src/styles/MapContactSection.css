@@ -1,0 +1,83 @@
+.map-contact-section {
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background: #fff;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+/* Left: the map */
+.map-area {
+  flex: 1;
+  max-width: 45%;
+}
+.map-image {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Divider in the middle */
+.divider-line {
+  width: 2px;
+  height:100px;
+  margin-top:-400px;
+  margin-left: 100px;
+  opacity: 0.60;
+}
+
+/* Right: contact info */
+.contact-info-area {
+    margin-left: 01px;
+    margin-top: 100px;
+  flex: 1;
+  max-width: 45%;
+}
+.info-subheading {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #b68c46;
+}
+.info-heading {
+  margin: 0 0 24px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.info-icon {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  margin-right: 16px;
+  color: #666;
+  margin-top: 2px;
+}
+.info-icon.gold {
+  color: #b68c46;
+}
+
+.info-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 4px;
+}
+.info-text {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.4;
+}

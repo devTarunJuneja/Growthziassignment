@@ -1,0 +1,75 @@
+.discount-banner {
+  background: url('/assets/discountbg.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:1200px;
+  margin-left:100px;
+  margin-bottom:150px;
+  margin-top:150px;
+  /* exact height from design: */
+  height: 362px;
+  /* if you need responsive width, remove the fixed width below */
+}
+
+.discount-banner__inner {
+  width: 1200px;              /* matches your container width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;            /* horizontal padding to match mockup */
+}
+
+/* Headline text */
+.discount-banner__text p {
+  font-family: Forum;
+font-weight: 400;
+font-style: Regular;
+font-size: 64px;
+leading-trim: NONE;
+line-height: 126%;
+letter-spacing: 0%;
+color: #ffffff;
+  margin: 0;                 /* reset default margin */
+
+}
+/* space between line and text */
+.discount-banner__line:first-child {
+  margin-bottom: 8px;
+}
+.discount-banner__line:last-child {
+  margin-top: 8px;
+}
+
+/* CTA (“Book Now”) */
+.discount-banner__cta {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+/* decorative horizontal rule */
+.discount-banner__hr {
+  display: block;
+  width: 60px;                /* exact length of the line */
+  height: 1px;
+  background-color: rgba(255,255,255,0.6);
+  margin-right: 16px;
+}
+
+/* “Book Now” text */
+.discount-banner__cta-text {
+  margin-right: 8px;
+  font-style: italic;         /* matches the slight italic look */
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* arrow */
+.discount-banner__cta-arrow {
+  font-size: 18px;
+  line-height: 1;
+}

@@ -1,0 +1,47 @@
+.edit-section {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.display-text {
+  margin-right: 8px;
+  white-space: pre-wrap;
+}
+
+.edit-input {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 200px;
+  resize: vertical;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 4px;
+  color: #666;
+}
+
+.edit-btn.trigger:hover {
+  color: #333;
+}
+
+.edit-btn.save {
+  color: #28a745;
+}
+
+.edit-btn.cancel {
+  color: #dc3545;
+}
+
+.edit-error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}

@@ -1,0 +1,161 @@
+:root {
+  --gold: #c59d5f;
+  --dark-text: #1a202c;
+  --gray-text: #4a5568;
+}
+
+.experience {
+  padding: 80px 0;
+}
+
+.experience__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  padding: 0 24px;
+}
+
+/* Left image & overlays */
+.experience__media {
+  position: relative;
+  flex: 1;
+}
+
+.experience__image {
+  width: 491;
+  height: 583px;
+  display: block;
+  border-radius: 8px;
+}
+
+.experience__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left:220px;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.experience__line {
+  position: absolute;
+  top: 20%;
+  right: -30px; /* overlaps 30px into content area */
+  width: 1px;
+  height: 120px;
+  margin-top: -120px;
+}
+
+/* Right text block */
+.experience__content {
+  flex: 1;
+  
+}
+
+.experience__preheading {
+ width: 346;
+height: 36;
+angle: 0 deg;
+opacity: 1;
+top: 1218px;
+left: 713px;
+margin-top:60px;
+font-family: Poppins;
+font-weight: 300;
+font-style: Light;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 24%;
+text-transform: uppercase;
+color: #BF9766;
+
+}
+
+.experience__title {
+width: 607;
+margin-top:18px;
+height: 162;
+angle: 0 deg;
+opacity: 1;
+top: 1258px;
+left: 713px;
+font-family: Forum;
+font-weight: 400;
+font-style: Regular;
+font-size: 64px;
+leading-trim: NONE;
+line-height: 126%;
+letter-spacing: 0%;
+color: #171717;
+
+
+
+}
+
+.experience__text {
+ font-family: Poppins;
+ margin-top:-10px;
+font-weight: 300;
+font-style: Light;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+color: #575656;
+
+
+}
+
+.experience__link {
+width: 189;
+height: 44.00001525878906;
+angle: 0 deg;
+opacity: 1;
+top: 1620px;
+left: 713px;
+margin-top:10px;
+color: #BF9766;
+
+
+}
+
+.experience__link:hover .experience__link-underline {
+  background-color: var(--gold);
+}
+
+.experience__link-arrow {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.experience__link-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .experience__inner {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .experience__line {
+    display: none;
+  }
+  .experience__media,
+  .experience__content {
+    max-width: 100%;
+  }
+}

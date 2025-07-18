@@ -1,0 +1,109 @@
+.testimonial-section {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* 1px-wide golden vertical line */
+.ts-line {
+  width: 2px;
+  height: 60px;
+  margin: 0 auto 16px;
+  background: url("/assets/Line2.png") center no-repeat;
+  background-size: 2px 60px;
+}
+
+/* Section label: small gold text, letter‑spaced */
+.ts-label {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #C99C62;
+  margin: 0;
+}
+
+/* Main heading: serif style */
+.ts-heading {
+  font-family: serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #000;
+  margin: 16px 0 32px;
+}
+
+/* Star row */
+.ts-stars {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.ts-star {
+  width: px;
+  height: 24px;
+}
+
+/* Quote text */
+.ts-quote {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+/* Client info (avatar + name/role) */
+.ts-client {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ts-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.ts-client-text {
+  margin-top: 12px;
+}
+
+.ts-client-name {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #C99C62;
+  margin: 0;
+}
+
+.ts-client-role {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+  margin: 4px 0 0;
+}
+
+/* Slider controls (arrows + dots) */
+.ts-slider {
+  width: 240px;   /* adjust to your Slider.png width */
+  height: 24px;   /* adjust to your Slider.png height */
+  margin: 0 auto;
+}
+
+.ts-slider-img {
+  width: 50px;
+  margin-left: -20px;
+  height: auto;
+  display: block;
+}

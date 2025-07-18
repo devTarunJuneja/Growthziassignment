@@ -1,0 +1,32 @@
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+.modal-card {
+  background: #fff; padding: 20px; border-radius: 8px; width: 300px;
+  position: relative;
+}
+.modal-close {
+  position: absolute; top: 12px; right: 12px;
+  background: none; border: none; cursor: pointer;
+}
+.modal-card h3 {
+  margin-top: 0;
+}
+.modal-card label {
+  display: block; margin: 12px 0 4px;
+}
+.modal-card input {
+  width: 100%; padding: 8px; box-sizing: border-box;
+}
+.submit-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #b68c46;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
