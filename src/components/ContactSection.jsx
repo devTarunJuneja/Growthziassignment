@@ -1,16 +1,15 @@
 import React from 'react';
-import '../styles/ContactSection.css';
+import '../styles/ContactSection.css'; // Your existing CSS
 import { FaPen, FaEnvelope, FaSearch } from 'react-icons/fa';
-
-// ✅ Import the image using ES Module
-import lineImg from '../assets/Line.png'; // adjust the path if needed
 
 const ContactSection = () => {
   return (
     <div className="contact-section">
+      
+
       {/* vertical accent line */}
       <img
-        src={lineImg}
+        src="/assets/Line.png"
         alt=""
         className="contact-line"
         aria-hidden="true"
@@ -33,11 +32,13 @@ const ContactSection = () => {
             action="https://formspree.io/f/xrbqpboz"
             method="POST"
           >
+            {/* Optional: custom email subject */}
             <input
               type="hidden"
               name="_subject"
               value="New Contact Request from Website"
             />
+            {/* Optional: redirect after success */}
             <input
               type="hidden"
               name="_next"

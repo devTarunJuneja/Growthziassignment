@@ -1,15 +1,12 @@
 import React from 'react';
 import '../styles/navbar.css';
 
-// ✅ Import logo properly
-import logo from '../assets/Logo.svg';
-
 export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar__container">
         <a href="/" className="navbar__logo">
-          <img src={logo} alt="Imperial Grand Hotel" />
+          <img src="/assets/Logo.svg" alt="Imperial Grand Hotel" />
         </a>
         <ul className="navbar__links">
           <li><a href="/">Home</a></li>

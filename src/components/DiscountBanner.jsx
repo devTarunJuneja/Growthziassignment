@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/DiscountBanner.css';
-import discountImg from '../assets/discount-bg.png'; // ✅ proper image import
+import '../styles/DiscountBanner.css'; // Assuming you have a CSS file for styles
 
 export default function DiscountBanner() {
   return (
     <section className="discount-banner">
       <div className="discount-banner__inner">
+        {/* Left: headline */}
         <div className="discount-banner__text">
           <p className="discount-banner__line1">
             Get A Luxurious Experience
@@ -15,17 +15,11 @@ export default function DiscountBanner() {
           </p>
         </div>
 
+        {/* Right: Book Now button */}
         <a href="#" className="discount-banner__cta">
           <span className="discount-banner__cta-text">Book Now</span>
           <span className="discount-banner__cta-arrow">›</span>
         </a>
-
-        {/* Optional: Add a decorative image */}
-        <img
-          src={discountImg}
-          alt="Luxury background"
-          className="discount-banner__img"
-        />
       </div>
     </section>
   );

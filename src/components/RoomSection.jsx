@@ -1,17 +1,11 @@
 import React from 'react';
 import '../styles/RoomSection.css';
 
-// ✅ Import all images properly
-import LineImg from '../assets/Line.png';
-import RoomInfoImg from '../assets/Room Info.png';
-import ImageRoomImg from '../assets/Imageroom.png';
-import SliderImg from '../assets/Slider.png';
-
 const RoomsSection = () => (
   <section className="rooms-section">
     <div className="rooms-section__inner">
       {/* Top Accent Line */}
-      <img src={LineImg} alt="" aria-hidden="true" className="rooms-section__line" />
+      <img src="/assets/Line.png" alt="" aria-hidden="true" className="rooms-section__line" />
 
       {/* Pre‑Heading */}
       <p className="rooms-section__preheading">OUR ROOM CHOICES</p>
@@ -26,16 +20,16 @@ const RoomsSection = () => (
 
         {/* Slide Frame */}
         <div className="rooms-section__slide">
-          {/* White Info Card */}
+          {/* White Info Card (exact image) */}
           <img
-            src={RoomInfoImg}
+            src="/assets/Room Info.png"
             alt="Room Info"
             className="rooms-section__card-img"
           />
 
           {/* Grey Background Panel */}
           <img
-            src={ImageRoomImg}
+            src="/assets/Imageroom.png"
             alt=""
             aria-hidden="true"
             className="rooms-section__panel-img"
@@ -45,16 +39,19 @@ const RoomsSection = () => (
         {/* Right Arrow */}
         <button className="rooms-section__arrow rooms-section__arrow--right">›</button>
       </div>
-    </div>
 
-    {/* Slider controls (arrows + dots) */}
-    <div className="ts-slider">
-      <img
-        src={SliderImg}
-        alt="room slider controls"
-        className="ts-slider-img"
-      />
-    </div>
+     </div>
+
+          {/* Slider controls (arrows + dots) */}
+      <div className="ts-slider">
+        <img
+         src="/assets/Slider.png"
+          alt="room slider controls"
+          className="ts-slider-img"
+        />
+      </div>
+    
+  
   </section>
 );
 

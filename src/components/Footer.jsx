@@ -1,9 +1,6 @@
 import React from 'react';
-import { Twitter, Facebook, Instagram, Globe2 } from 'lucide-react';
-import '../styles/Footer.css';
-
-// ✅ Import the logo properly
-import logo from '../assets/Logo.svg';
+import { Twitter, Facebook, Instagram,  Globe2 } from 'lucide-react';
+import '../styles/Footer.css'; // Assuming you have a CSS file for styles
 
 export default function Footer() {
   return (
@@ -13,10 +10,11 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer__brand">
           <img
-            src={logo}
+            src="/assets/Logo.svg"
             alt="Imperial Grand Hotel"
             className="footer__logo"
           />
+       
           <p className="footer__brand-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -53,18 +51,18 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Middle: one line, icons, one line */}
-      <div className="footer__middle">
-        <div className="footer__sep" /> {/* left line */}
-        <div className="footer__social"> {/* icons centered */}
-          {[Twitter, Facebook, Instagram, Globe2].map((Icon, i) => (
-            <a key={i} href="#" className="footer__social-link">
-              <Icon size={20} />
-            </a>
-          ))}
-        </div>
-        <div className="footer__sep" /> {/* right line */}
-      </div>
+     {/* Middle: one line, icons, one line */}
+<div className="footer__middle">
+  <div className="footer__sep" />      {/* left line */}
+  <div className="footer__social">     {/* icons centered */}
+    {[Twitter, Facebook, Instagram, Globe2].map((Icon, i) => (
+      <a key={i} href="#" className="footer__social-link">
+        <Icon size={20} />
+      </a>
+    ))}
+  </div>
+  <div className="footer__sep" />      {/* right line */}
+</div>
 
       {/* Bottom bar */}
       <div className="footer__bottom">

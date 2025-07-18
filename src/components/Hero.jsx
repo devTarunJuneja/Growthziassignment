@@ -4,15 +4,8 @@ import useModal from '../hooks/useModal';
 import AddButtonModal from './AddButtonModal';
 import EditSection from './EditSection';
 
-// ✅ Proper image imports
-import lineImg from '../assets/Line.png';
-import heroCircle from '../assets/herocircle.png';
-import starImg from '../assets/star.svg';
-import chevronLeft from '../assets/chevron-left.svg';
-import chevronRight from '../assets/chevron-right.svg';
-import calendarIcon from '../assets/calendar.svg';
-
 const HeroSection = () => {
+  // Modal hook + dynamic buttons state
   const { isOpen, open, close } = useModal();
   const [buttons, setButtons] = useState([
     { text: 'Check Availability', url: '#booking-form' },
@@ -25,11 +18,12 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero__inner">
+
         {/* LEFT SIDE CONTENT */}
         <div className="hero__content">
           {/* Vertical Accent Line */}
           <img
-            src={lineImg}
+            src="/assets/Line.png"
             alt=""
             aria-hidden="true"
             className="hero__accent-line-img"
@@ -68,7 +62,7 @@ const HeroSection = () => {
               {[...Array(3)].map((_, i) => (
                 <img
                   key={i}
-                  src={heroCircle}
+                  src="/assets/herocircle.png"
                   alt=""
                   aria-hidden="true"
                   className="hero__circle-img"
@@ -78,30 +72,35 @@ const HeroSection = () => {
             <span className="hero__rating-text">
               4.8 Rated Around The World
             </span>
-            <img
-              src={starImg}
-              alt="star"
-              className="hero__star-img"
-            />
+            {[...Array(1)].map((_, i) => (
+              <img
+                key={i}
+                src="/assets/star.svg"
+                alt="star"
+                className="hero__star-img"
+              />
+            ))}
           </div>
 
           {/* Carousel Arrows */}
           <div className="hero__arrows">
             <button className="hero__arrow-btn">
               <img
-                src={chevronLeft}
+                src="/assets/chevron-left.svg"
                 alt="Previous"
                 className="hero__arrow-img"
               />
             </button>
             <button className="hero__arrow-btn">
               <img
-                src={chevronRight}
+                src="/assets/chevron-right.svg"
                 alt="Next"
                 className="hero__arrow-img"
               />
             </button>
           </div>
+
+          
 
           {/* Floating + Add Button */}
           <button className="hero__add-btn" onClick={open}>
@@ -124,7 +123,7 @@ const HeroSection = () => {
                   className="booking-form__input"
                 />
                 <img
-                  src={calendarIcon}
+                  src="/assets/calendar.svg"
                   alt=""
                   aria-hidden="true"
                   className="booking-form__icon"
@@ -144,7 +143,7 @@ const HeroSection = () => {
                   className="booking-form__input"
                 />
                 <img
-                  src={calendarIcon}
+                  src="/assets/calendar.svg"
                   alt=""
                   aria-hidden="true"
                   className="booking-form__icon"

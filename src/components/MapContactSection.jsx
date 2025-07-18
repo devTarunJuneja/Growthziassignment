@@ -1,18 +1,14 @@
 import React from 'react';
-import '../styles/MapContactSection.css'; // CSS import
+import '../styles/MapContactSection.css'; // Assuming you have a CSS file for styles
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
-
-// ✅ Importing image files
-import mapImage from '../assets/Map.png';
-import lineImage from '../assets/Line2.png';
 
 const MapContactSection = () => (
   <section className="map-contact-section">
     <div className="map-area">
-      <img src={mapImage} alt="Hotel location map" className="map-image" />
+      <img src="/assets/Map.png" alt="Hotel location map" className="map-image" />
     </div>
 
-    <img src={lineImage} alt="" aria-hidden="true" className="divider-line" />
+    <img src="/assets/Line2.png" alt="" aria-hidden="true" className="divider-line" />
 
     <div className="contact-info-area">
       <p className="info-subheading">CONTACT INFO</p>

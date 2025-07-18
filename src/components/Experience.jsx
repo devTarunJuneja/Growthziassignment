@@ -1,10 +1,6 @@
+// src/components/ExperienceSection.jsx
 import React from 'react';
 import '../styles/Experience.css';
-
-// ✅ Import images properly
-import experienceImg from '../assets/experienceimg.png';
-import videoButton from '../assets/Video Button.png';
-import line2 from '../assets/Line2.png';
 
 const ExperienceSection = () => {
   return (
@@ -13,17 +9,17 @@ const ExperienceSection = () => {
         {/* Left image + overlays */}
         <div className="experience__media">
           <img
-            src={experienceImg}
+            src="/assets/experienceimg.png"
             alt="Enjoy a luxury experience"
             className="experience__image"
           />
           <img
-            src={videoButton}
+            src="/assets/Video Button.png"
             alt="Play video"
             className="experience__play-btn"
           />
           <img
-            src={line2}
+            src="/assets/Line2.png"
             alt=""
             aria-hidden="true"
             className="experience__line"

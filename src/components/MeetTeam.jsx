@@ -1,15 +1,11 @@
 import React from 'react';
 import '../styles/MeetTeam.css';
 
-// Importing images with proper paths
-import meetImg from '../assets/meetimg.png';
-import joshImg from '../assets/joshmullinsimg.png';
-
 const images = [
-  meetImg,      // 1st: grey placeholder
-  joshImg,      // 2nd: Josh’s portrait
-  meetImg,      // 3rd: grey placeholder again
-  meetImg       // 4th: grey placeholder again
+  '/assets/meetimg.png',          // 1st: grey placeholder
+  '/assets/joshmullinsimg.png',   // 2nd: Josh’s portrait
+  '/assets/meetimg.png',          // 3rd: grey placeholder
+  '/assets/meetimg.png'           // 4th: grey placeholder
 ];
 
 export default function MeetTeam() {
@@ -27,7 +23,7 @@ export default function MeetTeam() {
         <div className="meet-team__row">
           {images.map((src, idx) => (
             <div key={idx} className="meet-team__box">
-              <img src={src} alt={`Team member ${idx + 1}`} className="meet-team__img" />
+              <img src={src} alt="" className="meet-team__img" />
             </div>
           ))}
         </div>

@@ -1,11 +1,6 @@
 import React from 'react';
 import '../styles/TestimonialSection.css';
 
-// Image imports
-import star from '../assets/star.svg';
-import image1 from '../assets/Image1.png';
-import slider from '../assets/Slider.png';
-
 const TestimonialSection = () => {
   return (
     <section className="testimonial-section">
@@ -20,10 +15,10 @@ const TestimonialSection = () => {
 
       {/* 5‑star rating */}
       <div className="ts-stars">
-        {Array.from({ length: 1 }).map((_, i) => (
+        {Array.from({ length: 1}).map((_, i) => (
           <img
             key={i}
-            src={star}
+            src="/assets/star.svg"
             alt="star"
             className="ts-star"
           />
@@ -40,7 +35,7 @@ const TestimonialSection = () => {
       {/* Client avatar + name/role */}
       <div className="ts-client">
         <img
-          src={image1}
+          src="/assets/Image1.png"
           alt="Client avatar"
           className="ts-avatar"
         />
@@ -53,7 +48,7 @@ const TestimonialSection = () => {
       {/* Slider arrows + pagination dots */}
       <div className="ts-slider">
         <img
-          src={slider}
+          src="/assets/Slider.png"
           alt="testimonial slider controls"
           className="ts-slider-img"
         />

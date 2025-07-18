@@ -1,11 +1,5 @@
 import React from 'react';
-import '../styles/NewsUpdate.css';
-
-import newsImgSmall from '../assets/newsimgsmall.png';
-import inactiveArrow from '../assets/Inactive.png';
-import line2 from '../assets/Line2.png';
-import newsImgLarge from '../assets/newsimglarge.png';
-import activeArrow from '../assets/Active.png';
+import '../styles/NewsUpdate.css'; // Assuming you have a CSS file for styles
 
 const smallItems = [
   {
@@ -39,6 +33,7 @@ const largeItem = {
 export default function NewsUpdate() {
   return (
     <section className="news-update">
+      {/* vertical line + header */}
       <div className="news-update__preline" />
       <p className="news-update__sub">LOCAL NEWS & ACTIVITIES</p>
       <h2 className="news-update__title">Latest News Update</h2>
@@ -51,12 +46,24 @@ export default function NewsUpdate() {
         <div className="news-update__small-grid">
           {smallItems.map((item, i) => (
             <div className="news-update__small-card" key={i}>
-              <img src={newsImgSmall} alt="" className="small-card__img" />
-              <img src={inactiveArrow} alt="" className="small-card__arrow" />
+              <img
+                src="/assets/newsimgsmall.png"
+                alt=""
+                className="small-card__img"
+              />
+              <img
+                src="/assets/Inactive.png"
+                alt=""
+                className="small-card__arrow"
+              />
               <p className="small-card__title">{item.title}</p>
               <div className="small-card__meta">
                 <span className="small-card__date">{item.date}</span>
-                <img src={line2} alt="" className="small-card__line" />
+                <img
+                  src="/assets/Line2.png"
+                  alt=""
+                  className="small-card__line"
+                />
                 <span className="small-card__category">{item.category}</span>
               </div>
             </div>
@@ -65,12 +72,24 @@ export default function NewsUpdate() {
 
         {/* Right: 1 large item */}
         <div className="news-update__large-card">
-          <img src={newsImgLarge} alt="" className="large-card__img" />
-          <img src={activeArrow} alt="" className="large-card__arrow" />
+          <img
+            src="/assets/newsimglarge.png"
+            alt=""
+            className="large-card__img"
+          />
+          <img
+            src="/assets/Active.png"
+            alt=""
+            className="large-card__arrow"
+          />
           <p className="large-card__title">{largeItem.title}</p>
           <div className="large-card__meta">
             <span className="large-card__date">{largeItem.date}</span>
-            <img src={line2} alt="" className="large-card__line" />
+            <img
+              src="/assets/Line2.png"
+              alt=""
+              className="large-card__line"
+            />
             <span className="large-card__category">{largeItem.category}</span>
           </div>
         </div>
