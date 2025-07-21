@@ -1,3 +1,4 @@
+// src/components/HeroSection.jsx
 import React, { useState } from 'react';
 import '../styles/Hero.css';
 import useModal from '../hooks/useModal';
@@ -7,10 +8,13 @@ import EditSection from './EditSection';
 const HeroSection = () => {
   // Modal hook + dynamic buttons state
   const { isOpen, open, close } = useModal();
+
+  // Start with one default button; new ones push onto this array
   const [buttons, setButtons] = useState([
     { text: 'Check Availability', url: '#booking-form' },
   ]);
 
+  // Adds a new button object { text, url } into our buttons array
   function handleAdd(btn) {
     setButtons(prev => [...prev, btn]);
   }
@@ -100,7 +104,18 @@ const HeroSection = () => {
             </button>
           </div>
 
-          
+          {/* HERO BUTTONS BAR */}
+          <div className="hero__buttons">
+            {buttons.map((btn, idx) => (
+              <a
+                key={idx}
+                href={btn.url}
+                className="hero-btn"
+              >
+                {btn.text}
+              </a>
+            ))}
+          </div>
 
           {/* Floating + Add Button */}
           <button className="hero__add-btn" onClick={open}>
@@ -111,6 +126,7 @@ const HeroSection = () => {
         {/* RIGHT SIDE BOOKING FORM */}
         <div className="hero__form" id="booking-form">
           <form className="booking-form">
+            {/* Check In */}
             <div className="booking-form__field">
               <label htmlFor="checkin" className="booking-form__label">
                 Check In
@@ -131,6 +147,7 @@ const HeroSection = () => {
               </div>
             </div>
 
+            {/* Check Out */}
             <div className="booking-form__field">
               <label htmlFor="checkout" className="booking-form__label">
                 Check Out
@@ -151,6 +168,7 @@ const HeroSection = () => {
               </div>
             </div>
 
+            {/* Room & Guest */}
             <div className="booking-form__row">
               <div className="booking-form__field booking-form__field--small">
                 <label htmlFor="room" className="booking-form__label">
@@ -158,9 +176,7 @@ const HeroSection = () => {
                 </label>
                 <select id="room" className="booking-form__select">
                   {[1, 2, 3].map(n => (
-                    <option key={n} value={n}>
-                      {n}
-                    </option>
+                    <option key={n} value={n}>{n}</option>
                   ))}
                 </select>
               </div>
@@ -170,14 +186,13 @@ const HeroSection = () => {
                 </label>
                 <select id="guest" className="booking-form__select">
                   {[1, 2, 3].map(n => (
-                    <option key={n} value={n}>
-                      {n}
-                    </option>
+                    <option key={n} value={n}>{n}</option>
                   ))}
                 </select>
               </div>
             </div>
 
+            {/* Booking Form Button */}
             <button type="submit" className="booking-form__btn">
               Check Availability
             </button>
@@ -185,7 +200,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Add‑Button Modal */}
+      {/* Add-Button Modal */}
       <AddButtonModal isOpen={isOpen} close={close} onAdd={handleAdd} />
     </section>
   );

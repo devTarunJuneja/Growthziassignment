@@ -1,32 +1,42 @@
 .modal-backdrop {
   position: fixed; inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
   display: flex; align-items: center; justify-content: center;
   z-index: 1000;
 }
 .modal-card {
-  background: #fff; padding: 20px; border-radius: 8px; width: 300px;
+  background: #fff; padding: 24px; border-radius: 8px;
+  width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   position: relative;
 }
 .modal-close {
   position: absolute; top: 12px; right: 12px;
-  background: none; border: none; cursor: pointer;
+  background: none; border: none; font-size: 20px; cursor: pointer;
 }
 .modal-card h3 {
-  margin-top: 0;
+  margin-top: 0; font-size: 18px;
 }
 .modal-card label {
-  display: block; margin: 12px 0 4px;
+  display: block; margin: 16px 0 4px;
+  font-size: 14px;
 }
 .modal-card input {
   width: 100%; padding: 8px; box-sizing: border-box;
+  border: 1px solid #ccc; border-radius: 4px;
 }
-.submit-btn {
-  margin-top: 12px;
-  padding: 8px 16px;
-  background: #b68c46;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.modal-submit {
+  margin-top: 16px;
+  width: 100%; padding: 10px;
+  background: #bf9766; color: #fff; border: none;
+  border-radius: 4px; cursor: pointer;
+}
+.modal-submit:hover {
+  background: #a07d52;
+}
+/* at the bottom of src/styles/AddButtonModal.css */
+
+.modal-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
 }

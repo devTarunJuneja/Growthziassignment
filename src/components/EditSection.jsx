@@ -1,28 +1,24 @@
-// src/components/EditSection.jsx
 import React, { useState } from 'react';
 import { FiEdit2, FiCheck, FiX } from 'react-icons/fi';
 import { updateSection } from '../utils/api';
-import '../styles/EditSection.css'; // Assuming you have a CSS file for styles
+import '../styles/EditSection.css';
 
-export default function EditSection({
-  component,
-  field,
-  value: initialValue,
-  children,       // a render‑prop function for custom rendering
-}) {
+export default function EditSection({ component, field, value, children }) {
   const [editing, setEditing] = useState(false);
-  const [value, setValue]       = useState(initialValue);
-  const [loading, setLoading]   = useState(false);
-  const [error, setError]       = useState(null);
+  const [text, setText]       = useState(value);
+  const [loading, setLoading] = useState(false);
+  const [error, setError]     = useState(null);
 
   const handleSave = async () => {
     setLoading(true);
     setError(null);
     try {
-      await updateSection({ component, field, value });
+      await updateSection({ component, field, value: text });
       setEditing(false);
     } catch (e) {
-      setError('Save failed. Please try again.');
+      console.warn(e);
+      // degrade gracefully
+      setEditing(false);
     } finally {
       setLoading(false);
     }
@@ -30,48 +26,28 @@ export default function EditSection({
 
   if (editing) {
     return (
-      <div className="edit-section">
+      <span className="edit-inline">
         <textarea
           className="edit-input"
-          value={value}
-          onChange={e => setValue(e.target.value)}
+          value={text}
+          onChange={e => setText(e.target.value)}
         />
-        <button
-          className="edit-btn save"
-          onClick={handleSave}
-          disabled={loading}
-          title="Save"
-        >
+        <button onClick={handleSave} disabled={loading} className="edit-btn save">
           <FiCheck />
         </button>
-        <button
-          className="edit-btn cancel"
-          onClick={() => {
-            setValue(initialValue);
-            setEditing(false);
-          }}
-          title="Cancel"
-        >
+        <button onClick={() => setEditing(false)} className="edit-btn cancel">
           <FiX />
         </button>
-        {error && <div className="edit-error">{error}</div>}
-      </div>
+      </span>
     );
   }
 
   return (
-    <div className="edit-section">
-      {typeof children === 'function'
-        ? children(value)
-        : <span className="display-text">{value}</span>
-      }
-      <button
-        className="edit-btn trigger"
-        onClick={() => setEditing(true)}
-        title="Edit"
-      >
+    <span className="edit-inline">
+      {children(text)}
+      <button onClick={() => setEditing(true)} className="edit-btn trigger">
         <FiEdit2 />
       </button>
-    </div>
+    </span>
   );
 }
