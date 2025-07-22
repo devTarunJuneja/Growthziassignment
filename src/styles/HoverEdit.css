@@ -1,0 +1,24 @@
+.hover-edit {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-edit__btn {
+  position: absolute;
+  top: 0;
+  right: -24px;
+  background: none;
+  border: none;
+  color: #ccc;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.hover-edit:hover .hover-edit__btn {
+  opacity: 1;
+}
+
+.hover-edit__btn:hover {
+  color: #fff;
+}

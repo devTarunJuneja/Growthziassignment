@@ -1,53 +1,35 @@
+// src/components/EditSection.jsx
 import React, { useState } from 'react';
-import { FiEdit2, FiCheck, FiX } from 'react-icons/fi';
-import { updateSection } from '../utils/api';
+import { FiCheck, FiX } from 'react-icons/fi';
 import '../styles/EditSection.css';
+import { updateSection } from '../utils/api';
 
-export default function EditSection({ component, field, value, children }) {
-  const [editing, setEditing] = useState(false);
-  const [text, setText]       = useState(value);
-  const [loading, setLoading] = useState(false);
-  const [error, setError]     = useState(null);
+export default function EditSection({ component, field, value, onSave, children }) {
+  const [text, setText] = useState(value);
+  const [busy, setBusy] = useState(false);
 
   const handleSave = async () => {
-    setLoading(true);
-    setError(null);
+    setBusy(true);
     try {
       await updateSection({ component, field, value: text });
-      setEditing(false);
-    } catch (e) {
-      console.warn(e);
-      // degrade gracefully
-      setEditing(false);
+      if (onSave) onSave(text);
+    } catch {
+      // swallow error and still save locally
+      if (onSave) onSave(text);
     } finally {
-      setLoading(false);
+      setBusy(false);
     }
   };
 
-  if (editing) {
-    return (
-      <span className="edit-inline">
-        <textarea
-          className="edit-input"
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-        <button onClick={handleSave} disabled={loading} className="edit-btn save">
-          <FiCheck />
-        </button>
-        <button onClick={() => setEditing(false)} className="edit-btn cancel">
-          <FiX />
-        </button>
-      </span>
-    );
-  }
-
-  return (
-    <span className="edit-inline">
-      {children(text)}
-      <button onClick={() => setEditing(true)} className="edit-btn trigger">
-        <FiEdit2 />
-      </button>
+  return busy ? null : (
+    <span className="edit-section-wrapper">
+      <textarea
+        className="edit-section-input"
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <button onClick={handleSave} className="edit-section-btn save"><FiCheck /></button>
+      <button onClick={() => setText(value)} className="edit-section-btn cancel"><FiX /></button>
     </span>
   );
 }
